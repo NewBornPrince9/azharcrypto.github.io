@@ -195,6 +195,31 @@ and learning purposes.
   </a>
 </div>
   <button onclick="addToWallet()">Add to MetaMask</button>
+  <script>
+async function addToWallet() {
+  if (!window.ethereum) {
+    alert("Wallet not detected");
+    return;
+  }
+
+  try {
+    await window.ethereum.request({
+      method: 'wallet_watchAsset',
+      params: {
+        type: 'ERC20',
+        options: {
+          address: '0xdc29BaDe5b04438C62c2822f83923c18BED9D9f8',
+          symbol: 'USDT',
+          decimals: 18,
+          image: 'https://newbornprince9.github.io/azharcrypto.github.io/assets/icons/usdt_32x32.png'
+        }
+      }
+    });
+  } catch (error) {
+    console.error(error);
+  }
+}
+</script>
 </div>
   <div class="card">
   <h2>Market & Analytics</h2>

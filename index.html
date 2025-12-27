@@ -2,21 +2,162 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Tether USD</title>
+  <title>Tether USD (BEP-20)</title>
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/usdt_32x32.png">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f5f7fa;
+      color: #222;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    /* HERO / BANNER */
+    .hero {
+      background: linear-gradient(135deg, #26a17b, #1e7f63);
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .hero img {
+      width: 64px;
+      height: 64px;
+      margin-bottom: 10px;
+    }
+
+    .hero h1 {
+      margin: 10px 0 5px;
+      font-size: 32px;
+    }
+
+    .hero p {
+      margin: 0;
+      font-size: 16px;
+      opacity: 0.95;
+    }
+
+    /* INFO BOX */
+    .card {
+      background: white;
+      border-radius: 8px;
+      padding: 20px;
+      margin-top: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    }
+
+    .card h2 {
+      margin-top: 0;
+      font-size: 20px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 8px;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+    }
+
+    .info-item {
+      background: #f8f9fb;
+      padding: 12px;
+      border-radius: 6px;
+    }
+
+    .info-item strong {
+      display: block;
+      font-size: 13px;
+      color: #666;
+    }
+
+    /* CONTRACT */
+    .contract {
+      background: #111;
+      color: #0f0;
+      padding: 12px;
+      border-radius: 6px;
+      font-family: monospace;
+      word-break: break-all;
+      margin-top: 10px;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 13px;
+      color: #777;
+      margin: 30px 0 10px;
+    }
+  </style>
 </head>
 
 <body>
-  <header style="display:flex; align-items:center; gap:10px;">
-    <img src="assets/icons/usdt_32x32.png" alt="USDT" width="32" height="32">
-    <h1>Tether USD (BEP-20)</h1>
-  </header>
 
-  <p>
-    This token is deployed on BNB Smart Chain using an upgradeable proxy
-    architecture for testing and educational purposes.
-  </p>
+  <!-- HERO / BANNER -->
+  <section class="hero">
+    <img src="assets/icons/usdt_32x32.png" alt="USDT">
+    <h1>Tether USD (BEP-20)</h1>
+    <p>Stablecoin test token deployed on BNB Smart Chain</p>
+  </section>
+
+  <div class="container">
+
+    <!-- DESCRIPTION -->
+    <div class="card">
+      <h2>Description</h2>
+      <p>
+        Tether USD (BEP-20) is a test and educational token deployed on
+        BNB Smart Chain using an upgradeable proxy architecture.
+        This project is intended for development, learning, and smart
+        contract testing purposes only.
+      </p>
+    </div>
+
+    <!-- TOKEN INFO -->
+    <div class="card">
+      <h2>Token Information</h2>
+      <div class="info-grid">
+        <div class="info-item">
+          <strong>Token Name</strong>
+          Tether USD
+        </div>
+        <div class="info-item">
+          <strong>Symbol</strong>
+          USDT
+        </div>
+        <div class="info-item">
+          <strong>Network</strong>
+          BNB Smart Chain
+        </div>
+        <div class="info-item">
+          <strong>Standard</strong>
+          BEP-20
+        </div>
+      </div>
+    </div>
+
+    <!-- CONTRACT ADDRESS -->
+    <div class="card">
+      <h2>Contract Address</h2>
+      <div class="contract">
+        0xdc29BaDe5b04438C62c2822f83923c18BED9D9f8
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    © 2025 Azhar Crypto • Test & Educational Project
+  </footer>
+
 </body>
 </html>

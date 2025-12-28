@@ -294,7 +294,23 @@ It has no claim or relationship with any existing stablecoin or financial produc
     Chart data powered by Dexscreener. Prices and liquidity may vary across markets.
   </p>
 </div>
+<script>
+function updateChartTheme() {
+  const iframe = document.getElementById("dexChart");
+  if (!iframe) return;
 
+  const theme = document.body.classList.contains("dark") ? "dark" : "light";
+  iframe.src =
+    "https://dexscreener.com/bsc/0xbb46ec8d2414ea6af618e86d6224563c15c02035?embed=1&theme=" +
+    theme;
+}
+
+const oldToggle = toggleDark;
+toggleDark = function () {
+  oldToggle();
+  updateChartTheme();
+};
+</script>
 
 <div class="actions">
   <a class="btn"

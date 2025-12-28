@@ -1,92 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Tether USD (BEP-20)</title>
-<div class="price-badge-embed">
-  <iframe
-    src="https://www.xxyy.io/bsc/0xbb46ec8d2414ea6af618e86d6224563c15c02035"
-    loading="lazy"
-    referrerpolicy="no-referrer"
-    sandbox="allow-scripts allow-same-origin"
-  ></iframe>
-</div>
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<link rel="icon" type="image/png" sizes="32x32" href="assets/icons/usdt_32x32.png">
 
 <style>
 :root {
-  --primary:#26a17b;
-  --bg:#f4f6f9;
-  --card:#ffffff;
-  --text:#222;
-  --muted:#666;
-  --dark-bg:#0f172a;
-  --dark-card:#111827;
-  --dark-text:#e5e7eb;
+  --bg:#0b0f14;
+  --card:#111827;
+  --text:#e5e7eb;
+  --muted:#9ca3af;
+  --accent:#22c55e;
 }
 
 body {
   margin:0;
-  font-family:Arial, Helvetica, sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background:#f3f4f6;
+  color:#111;
+}
+
+.dark body {
   background:var(--bg);
   color:var(--text);
-  transition:.3s;
 }
 
-body.dark {
-  background:var(--dark-bg);
-  color:var(--dark-text);
-}
-
-.container {
-  max-width:1000px;
-  margin:auto;
-  padding:20px;
-}
-
-/* ===== HERO BANNER ===== */
-.hero-banner {
+.hero {
   position:relative;
-  background:url("assets/banners/banner-usdt.png") center/cover no-repeat;
-  min-height:460px;
+  min-height:92vh;
+  background:
+    linear-gradient(to bottom, rgba(0,0,0,.65), rgba(0,0,0,.75)),
+    url("assets/banners/banner-usdt.png") center/cover no-repeat;
   display:flex;
   align-items:center;
   justify-content:center;
-}
-
-.hero-overlay {
-  position:absolute;
-  inset:0;
-  background:rgba(0,0,0,.6);
-}
-
-.hero-content {
-  position:relative;
-  z-index:2;
-  color:#fff;
   text-align:center;
-  max-width:900px;
-  padding:20px;
+  padding:40px 20px;
 }
 
-.hero-content img {
+.hero img.logo {
   width:72px;
+  height:72px;
+  border-radius:50%;
+  margin-bottom:16px;
 }
 
-.hero-content h1 {
-  font-size:38px;
-  margin:12px 0 6px;
+.hero h1 {
+  font-size:clamp(28px,4vw,46px);
+  margin:0;
+  color:white;
 }
 
-.hero-content p {
-  margin:6px 0;
-  opacity:.95;
+.hero p {
+  max-width:720px;
+  margin:12px auto;
+  color:#d1d5db;
 }
 
-.hero-actions {
+.price-badge {
+  margin:18px auto;
+  max-width:520px;
+}
+
+.price-badge iframe {
+  width:100%;
+  height:92px;
+  border:none;
+  border-radius:14px;
+}
+
+.cta {
   margin-top:20px;
   display:flex;
   gap:12px;
@@ -94,104 +78,81 @@ body.dark {
   flex-wrap:wrap;
 }
 
-/* ===== BUTTON ===== */
-.btn, button {
-  background:var(--primary);
-  color:#fff;
-  border:none;
-  padding:10px 18px;
-  border-radius:8px;
-  cursor:pointer;
-  font-size:14px;
+.btn {
+  padding:12px 22px;
+  border-radius:10px;
+  font-weight:600;
   text-decoration:none;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+}
+
+.btn.primary {
+  background:var(--accent);
+  color:#052e16;
 }
 
 .btn.secondary {
-  background:#111;
+  background:#1f2933;
+  color:#e5e7eb;
 }
 
-.btn:hover, button:hover {
-  opacity:.9;
+.section {
+  max-width:1100px;
+  margin:60px auto;
+  padding:0 20px;
 }
 
-/* ===== CARD ===== */
 .card {
+  background:white;
+  border-radius:16px;
+  padding:24px;
+  margin-bottom:24px;
+}
+
+.dark .card {
   background:var(--card);
-  padding:22px;
-  margin-top:22px;
-  border-radius:12px;
-  box-shadow:0 8px 25px rgba(0,0,0,.08);
 }
 
-body.dark .card {
-  background:var(--dark-card);
-}
-
-.card h2 {
+h2 {
   margin-top:0;
-  border-bottom:1px solid #ddd;
-  padding-bottom:8px;
 }
 
-/* ===== INFO GRID ===== */
 .info-grid {
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:15px;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:16px;
 }
 
 .info-item {
-  background:#f1f3f6;
-  padding:12px;
-  border-radius:6px;
-}
-
-body.dark .info-item {
-  background:#1f2937;
-}
-
-.info-item strong {
-  display:block;
-  font-size:12px;
-  color:var(--muted);
-}
-
-/* ===== CONTRACT ===== */
-.contract-box {
-  background:#000;
-  color:#00ff9c;
+  background:rgba(0,0,0,.05);
   padding:14px;
-  border-radius:8px;
-  font-family:monospace;
-  word-break:break-all;
+  border-radius:12px;
+  font-size:14px;
 }
 
-.actions {
-  margin-top:14px;
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
+.dark .info-item {
+  background:rgba(255,255,255,.05);
 }
 
-/* ===== TOGGLE ===== */
+iframe.chart {
+  width:100%;
+  height:520px;
+  border:none;
+  border-radius:16px;
+}
+
 .toggle {
   position:fixed;
-  top:15px;
-  right:20px;
-  background:#000;
-  color:#fff;
-  padding:6px 12px;
-  border-radius:20px;
+  top:16px;
+  right:16px;
+  background:#111;
+  color:white;
+  padding:8px 14px;
+  border-radius:999px;
   cursor:pointer;
   font-size:13px;
-  z-index:10;
-}
-
-footer {
-  text-align:center;
-  margin:40px 0 20px;
-  font-size:13px;
-  color:var(--muted);
 }
 </style>
 </head>
@@ -200,220 +161,79 @@ footer {
 
 <div class="toggle" onclick="toggleDark()">🌙 Dark</div>
 
-<!-- ===== HERO ===== -->
-<section class="hero-banner">
-  <div class="hero-overlay"></div>
-
-  <div class="hero-content">
-    <img src="assets/icons/usdt_32x32.png" alt="USDT">
+<section class="hero">
+  <div>
+    <img src="assets/icons/usdt_32x32.png" class="logo" alt="USDT"/>
     <h1>Tether USD (BEP-20)</h1>
-<div id="price-badge" class="price-badge">
-  ⏳ Loading market data...
-</div>
-
-    <p>Stablecoin test token deployed on BNB Smart Chain</p>
-
-    <p style="font-size:14px; margin-top:12px;">
-      This token is deployed using an upgradeable proxy smart contract architecture.
-      Created strictly for testing and experimental purposes only, with no affiliation
-      to any existing brands, assets, or stablecoins.
+    <p>
+      Stablecoin test token deployed on BNB Smart Chain using upgradeable proxy smart contracts.
+      Created strictly for testing and educational purposes only.
     </p>
 
-    <div class="hero-actions">
-      <button onclick="addToMetaMask()">Add to MetaMask</button>
+    <!-- PRICE BADGE -->
+    <div class="price-badge">
+      <iframe
+        src="https://www.xxyy.io/bsc/0xbb46ec8d2414ea6af618e86d6224563c15c02035"
+        loading="lazy"
+        sandbox="allow-scripts allow-same-origin"
+      ></iframe>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta">
+      <a class="btn primary"
+         href="https://metamask.app.link/dapp/newbornprince9.github.io/azharcrypto.github.io/"
+         target="_blank">
+        ➕ Add to MetaMask
+      </a>
 
       <a class="btn secondary"
          href="https://dexscreener.com/bsc/0xbb46ec8d2414ea6af618e86d6224563c15c02035"
          target="_blank">
-        View Market
+        📊 View Market
       </a>
     </div>
   </div>
 </section>
 
-<div class="container">
-
-<!-- DESCRIPTION -->
-<div class="card">
-<h2>Description</h2>
-<p>
-Tether USD (BEP-20) is a test and educational stablecoin deployed on BNB Smart Chain.
-This project is intended solely for development, learning, and smart contract testing.
-It has no claim or relationship with any existing stablecoin or financial product.
-</p>
-</div>
-
-<!-- TOKEN INFO -->
-<div class="card">
-<h2>Token Information</h2>
-<div class="info-grid">
-  <div class="info-item"><strong>Name</strong>Tether USD</div>
-  <div class="info-item"><strong>Symbol</strong>USDT</div>
-  <div class="info-item"><strong>Network</strong>BNB Smart Chain</div>
-  <div class="info-item"><strong>Standard</strong>BEP-20</div>
-</div>
-</div>
-
-<!-- CONTRACT -->
-<div class="card">
-<h2>Contract Address</h2>
-
-<div id="contract" class="contract-box">
-0xdc29BaDe5b04438C62c2822f83923c18BED9D9f8
-</div>
-
-<div class="actions">
-  <button onclick="copyContract()">Copy Address</button>
-
-  <a class="btn"
-     href="https://bscscan.com/address/0xdc29BaDe5b04438C62c2822f83923c18BED9D9f8"
-     target="_blank">
-     BscScan
-  </a>
-</div>
-</div>
-
-<!-- MARKET -->
-<div class="card">
-<h2>Market & Analytics</h2>
-  <!-- DEXSCREENER CHART -->
-<div class="card">
-  <h2>Live Price Chart (Dexscreener)</h2>
-<!-- GECKOTERMINAL CHART -->
-<div class="card">
-  <h2>Live Chart (GeckoTerminal)</h2>
-
-  <div style="
-    position: relative;
-    padding-bottom: 56.25%;
-    height: 0;
-    overflow: hidden;
-    border-radius: 12px;
-  ">
-    <iframe
-      src="https://www.geckoterminal.com/bsc/pools/0xbb46ec8d2414ea6af618e86d6224563c15c02035?embed=1&theme=dark"
-      style="
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-        border: 0;
-      "
-      allowfullscreen
-    ></iframe>
+<section class="section">
+  <div class="card">
+    <h2>Description</h2>
+    <p>
+      Tether USD (BEP-20) is a test and educational stablecoin deployed on BNB Smart Chain.
+      This project has no affiliation with existing brands, assets, or financial products.
+    </p>
   </div>
 
-  <p style="font-size:13px; color:#666; margin-top:10px;">
-    Market data powered by GeckoTerminal.
-  </p>
-</div>
-
-  <div style="
-    position: relative;
-    padding-bottom: 56.25%;
-    height: 0;
-    overflow: hidden;
-    border-radius: 12px;
-  ">
-    <iframe
-      src="https://dexscreener.com/bsc/0xbb46ec8d2414ea6af618e86d6224563c15c02035?embed=1&theme=dark"
-      style="
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        border: 0;
-      "
-      allowfullscreen
-    ></iframe>
+  <div class="card">
+    <h2>Token Information</h2>
+    <div class="info-grid">
+      <div class="info-item"><b>Name:</b> Tether USD</div>
+      <div class="info-item"><b>Symbol:</b> USDT</div>
+      <div class="info-item"><b>Chain:</b> BNB Smart Chain</div>
+      <div class="info-item"><b>Decimals:</b> 18</div>
+      <div class="info-item"><b>Contract:</b><br>0xdc29BaDe5b04438C62c2822f83923c18BED9D9f8</div>
+    </div>
   </div>
 
-  <p style="font-size:13px; color:#666; margin-top:10px;">
-    Chart data powered by Dexscreener. Prices and liquidity may vary across markets.
-  </p>
-</div>
-<script>
-function updateChartTheme() {
-  const iframe = document.getElementById("dexChart");
-  if (!iframe) return;
+  <div class="card">
+    <h2>Live Chart (GeckoTerminal)</h2>
+    <iframe class="chart"
+      src="https://www.geckoterminal.com/bsc/pools/0xbb46ec8d2414ea6af618e86d6224563c15c02035?embed=1&theme=dark">
+    </iframe>
+  </div>
 
-  const theme = document.body.classList.contains("dark") ? "dark" : "light";
-  iframe.src =
-    "https://dexscreener.com/bsc/0xbb46ec8d2414ea6af618e86d6224563c15c02035?embed=1&theme=" +
-    theme;
-}
-
-const oldToggle = toggleDark;
-toggleDark = function () {
-  oldToggle();
-  updateChartTheme();
-};
-</script>
-
-<div class="actions">
-  <a class="btn"
-     href="https://www.geckoterminal.com/bsc/pools/0xbb46ec8d2414ea6af618e86d6224563c15c02035"
-     target="_blank">
-     GeckoTerminal
-  </a>
-
-  <a class="btn"
-     href="https://dexscreener.com/bsc/0xbb46ec8d2414ea6af618e86d6224563c15c02035"
-     target="_blank">
-     Dexscreener
-  </a>
-
-  <a class="btn"
-     href="https://web3.okx.com/token/bsc/0xdc29bade5b04438c62c2822f83923c18bed9d9f8"
-     target="_blank">
-     OKX Web3
-  </a>
-
-  <a class="btn"
-     href="https://www.binance.com/en/web3wallet"
-     target="_blank">
-     Binance Web3 Wallet
-  </a>
-</div>
-</div>
-
-</div>
-
-<footer>
-© 2025 Azhar Crypto • Educational & Testing Project
-</footer>
+  <div class="card">
+    <h2>Live Chart (Dexscreener)</h2>
+    <iframe class="chart"
+      src="https://dexscreener.com/bsc/0xbb46ec8d2414ea6af618e86d6224563c15c02035?embed=1&theme=dark">
+    </iframe>
+  </div>
+</section>
 
 <script>
-function copyContract() {
-  navigator.clipboard.writeText(
-    document.getElementById("contract").innerText
-  );
-  alert("Contract address copied!");
-}
-
-async function addToMetaMask() {
-  if (!window.ethereum) {
-    alert("MetaMask not detected");
-    return;
-  }
-
-  await window.ethereum.request({
-    method: 'wallet_watchAsset',
-    params: {
-      type: 'ERC20',
-      options: {
-        address: '0xdc29BaDe5b04438C62c2822f83923c18BED9D9f8',
-        symbol: 'USDT',
-        decimals: 18,
-        image: 'https://newbornprince9.github.io/azharcrypto.github.io/assets/icons/usdt_32x32.png'
-      }
-    }
-  });
-}
-
 function toggleDark() {
-  document.body.classList.toggle("dark");
+  document.documentElement.classList.toggle("dark");
 }
 </script>
 

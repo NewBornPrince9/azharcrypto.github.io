@@ -5,21 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Tether USD (BEP-20)</title>
 
-<style> 
-  .hero {
-  overflow: hidden;
-}
-
-.price-badge {
-  position: relative;
-  z-index: 2;
-}
-
-.price-badge iframe {
-  display: block;
-  overflow: hidden;
-}
-
+<style>
 :root {
   --bg:#0b0f14;
   --card:#111827;
@@ -44,13 +30,14 @@ body {
   position:relative;
   min-height:92vh;
   background:
-    linear-gradient(to bottom, rgba(0,0,0,.65), rgba(0,0,0,.75)),
+    linear-gradient(to bottom, rgba(0,0,0,.65), rgba(0,0,0,.8)),
     url("assets/banners/banner-usdt.png") center/cover no-repeat;
   display:flex;
   align-items:center;
   justify-content:center;
   text-align:center;
   padding:40px 20px;
+  overflow:hidden;
 }
 
 .hero img.logo {
@@ -75,6 +62,8 @@ body {
 .price-badge {
   margin:18px auto;
   max-width:520px;
+  position:relative;
+  z-index:2;
 }
 
 .price-badge iframe {
@@ -82,10 +71,11 @@ body {
   height:92px;
   border:none;
   border-radius:14px;
+  display:block;
 }
 
 .cta {
-  margin-top:20px;
+  margin-top:22px;
   display:flex;
   gap:12px;
   justify-content:center;
@@ -150,7 +140,7 @@ h2 {
   background:rgba(255,255,255,.05);
 }
 
-iframe.chart {
+iframe.market {
   width:100%;
   height:520px;
   border:none;
@@ -167,6 +157,7 @@ iframe.chart {
   border-radius:999px;
   cursor:pointer;
   font-size:13px;
+  z-index:50;
 }
 </style>
 </head>
@@ -175,6 +166,7 @@ iframe.chart {
 
 <div class="toggle" onclick="toggleDark()">🌙 Dark</div>
 
+<!-- HERO -->
 <section class="hero">
   <div>
     <img src="assets/icons/usdt_32x32.png" class="logo" alt="USDT"/>
@@ -184,13 +176,13 @@ iframe.chart {
       Created strictly for testing and educational purposes only.
     </p>
 
-    <!-- PRICE BADGE -->
+    <!-- PRICE BADGE (XXYY.IO) -->
     <div class="price-badge">
       <iframe
         src="https://www.xxyy.io/bsc/0xbb46ec8d2414ea6af618e86d6224563c15c02035"
         loading="lazy"
-        sandbox="allow-scripts allow-same-origin"
-      ></iframe>
+        sandbox="allow-scripts allow-same-origin">
+      </iframe>
     </div>
 
     <!-- CTA -->
@@ -202,15 +194,17 @@ iframe.chart {
       </a>
 
       <a class="btn secondary"
-         href="https://dexscreener.com/bsc/0xbb46ec8d2414ea6af618e86d6224563c15c02035"
+         href="https://www.xxyy.io/bsc/0xbb46ec8d2414ea6af618e86d6224563c15c02035"
          target="_blank">
-        📊 View Market
+        📈 View Market
       </a>
     </div>
   </div>
 </section>
 
+<!-- CONTENT -->
 <section class="section">
+
   <div class="card">
     <h2>Description</h2>
     <p>
@@ -226,23 +220,22 @@ iframe.chart {
       <div class="info-item"><b>Symbol:</b> USDT</div>
       <div class="info-item"><b>Chain:</b> BNB Smart Chain</div>
       <div class="info-item"><b>Decimals:</b> 18</div>
-      <div class="info-item"><b>Contract:</b><br>0xdc29BaDe5b04438C62c2822f83923c18BED9D9f8</div>
+      <div class="info-item"><b>Contract:</b><br>
+        0xdc29BaDe5b04438C62c2822f83923c18BED9D9f8
+      </div>
     </div>
   </div>
 
+  <!-- SINGLE MARKET VIEW -->
   <div class="card">
-    <h2>Live Chart (GeckoTerminal)</h2>
-    <iframe class="chart"
-      src="https://www.geckoterminal.com/bsc/pools/0xbb46ec8d2414ea6af618e86d6224563c15c02035?embed=1&theme=dark">
+    <h2>Live Market</h2>
+    <iframe class="market"
+      src="https://www.xxyy.io/bsc/0xbb46ec8d2414ea6af618e86d6224563c15c02035"
+      loading="lazy"
+      sandbox="allow-scripts allow-same-origin">
     </iframe>
   </div>
 
-  <div class="card">
-    <h2>Live Chart (Dexscreener)</h2>
-    <iframe class="chart"
-      src="https://dexscreener.com/bsc/0xbb46ec8d2414ea6af618e86d6224563c15c02035?embed=1&theme=dark">
-    </iframe>
-  </div>
 </section>
 
 <script>

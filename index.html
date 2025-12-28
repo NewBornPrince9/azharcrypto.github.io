@@ -176,7 +176,7 @@ iframe.market {
       Created strictly for testing and educational purposes only.
     </p>
 
-    <!-- PRICE BADGE (XXYY.IO) -->
+    <!-- PRICE BADGE -->
     <div class="price-badge">
       <iframe
         src="https://www.xxyy.io/bsc/0xbb46ec8d2414ea6af618e86d6224563c15c02035"
@@ -226,11 +226,21 @@ iframe.market {
     </div>
   </div>
 
-  <!-- SINGLE MARKET VIEW -->
+  <!-- XXYY MARKET -->
   <div class="card">
     <h2>Live Market</h2>
     <iframe class="market"
       src="https://www.xxyy.io/bsc/0xbb46ec8d2414ea6af618e86d6224563c15c02035"
+      loading="lazy"
+      sandbox="allow-scripts allow-same-origin">
+    </iframe>
+  </div>
+
+  <!-- GECKOTERMINAL CHART -->
+  <div class="card">
+    <h2>Live Chart (GeckoTerminal)</h2>
+    <iframe class="market"
+      src="https://www.geckoterminal.com/bsc/pools/0xbb46ec8d2414ea6af618e86d6224563c15c02035?embed=1&theme=dark"
       loading="lazy"
       sandbox="allow-scripts allow-same-origin">
     </iframe>

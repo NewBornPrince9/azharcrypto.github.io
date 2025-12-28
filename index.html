@@ -215,6 +215,55 @@ iframe.market {
 
   <div class="card">
     <h2>Token Information</h2>
+    <div class="card">
+  <h2>How to Add Token to Wallet</h2>
+
+  <p>
+    If the token does not appear automatically in your wallet after transfer,
+    follow the steps below. This is normal for newly deployed tokens.
+  </p>
+
+  <h3>🦊 MetaMask (Auto Detect)</h3>
+  <p>
+    Click the button below to automatically add the token to MetaMask.
+  </p>
+
+  <button class="btn primary" onclick="addToMetaMask()">
+    ➕ Add to MetaMask
+  </button>
+
+  <hr style="margin:24px 0; opacity:.3;">
+
+  <h3>📱 Trust Wallet</h3>
+  <ol>
+    <li>Open Trust Wallet</li>
+    <li>Tap the top-right filter icon</li>
+    <li>Select <b>Add Custom Token</b></li>
+    <li>Network: <b>BNB Smart Chain</b></li>
+    <li>Paste contract address below</li>
+  </ol>
+
+  <div class="info-item" style="margin-top:10px;">
+    <b>Contract Address:</b><br>
+    0xdc29BaDe5b04438C62c2822f83923c18BED9D9f8
+  </div>
+
+  <hr style="margin:24px 0; opacity:.3;">
+
+  <h3>🔐 OKX Wallet</h3>
+  <ol>
+    <li>Open OKX Wallet</li>
+    <li>Switch network to <b>BNB Smart Chain</b></li>
+    <li>Search the token by contract address</li>
+    <li>Confirm and add token</li>
+  </ol>
+
+  <p style="font-size:13px; color:var(--muted); margin-top:16px;">
+    ⚠️ Note: Some wallets require manual token addition for new or test tokens.
+    This does not mean your funds are missing.
+  </p>
+</div>
+
     <div class="info-grid">
       <div class="info-item"><b>Name:</b> Tether USD</div>
       <div class="info-item"><b>Symbol:</b> USDT</div>

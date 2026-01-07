@@ -12,6 +12,8 @@
   --text:#e5e7eb;
   --muted:#9ca3af;
   --accent:#22c55e;
+  --telegram:#24A1DE;
+  --twitter:#1DA1F2;
 }
 
 body {
@@ -90,17 +92,17 @@ body {
   display:inline-flex;
   align-items:center;
   gap:8px;
+  transition: opacity 0.2s;
 }
 
-.btn.primary {
-  background:var(--accent);
-  color:#052e16;
+.btn:hover {
+  opacity: 0.9;
 }
 
-.btn.secondary {
-  background:#1f2933;
-  color:#e5e7eb;
-}
+.btn.primary { background:var(--accent); color:#052e16; }
+.btn.secondary { background:#1f2933; color:#e5e7eb; }
+.btn.tg { background:var(--telegram); color:white; }
+.btn.x { background:#000; color:white; }
 
 .section {
   max-width:1100px;
@@ -117,10 +119,6 @@ body {
 
 .dark .card {
   background:var(--card);
-}
-
-h2 {
-  margin-top:0;
 }
 
 .info-grid {
@@ -159,6 +157,12 @@ iframe.market {
   font-size:13px;
   z-index:50;
 }
+
+footer {
+  text-align: center;
+  padding: 40px 0;
+  color: var(--muted);
+}
 </style>
 </head>
 
@@ -166,7 +170,6 @@ iframe.market {
 
 <div class="toggle" onclick="toggleDark()">🌙 Dark</div>
 
-<!-- HERO -->
 <section class="hero">
   <div>
     <img src="assets/icons/usdt_32x32.png" class="logo" alt="USDT"/>
@@ -176,7 +179,6 @@ iframe.market {
       Created strictly for testing and educational purposes only.
     </p>
 
-    <!-- PRICE BADGE -->
     <div class="price-badge">
       <iframe
         src="https://www.xxyy.io/bsc/0xbb46ec8d2414ea6af618e86d6224563c15c02035"
@@ -185,126 +187,66 @@ iframe.market {
       </iframe>
     </div>
 
-    <!-- CTA -->
     <div class="cta">
-      <a class="btn primary"
-         href="https://metamask.app.link/dapp/newbornprince9.github.io/azharcrypto.github.io/"
-         target="_blank">
-        ➕ Add to MetaMask
+      <a class="btn primary" href="https://metamask.app.link/dapp/newbornprince9.github.io/azharcrypto.github.io/" target="_blank">
+        ➕ MetaMask
       </a>
-
-      <a class="btn secondary"
-         href="https://www.xxyy.io/bsc/0xbb46ec8d2414ea6af618e86d6224563c15c02035"
-         target="_blank">
-        📈 View Market
+      <a class="btn tg" href="https://t.me/TetherUSDTOfficial9" target="_blank">
+        ✈️ Telegram
+      </a>
+      <a class="btn x" href="https://twitter.com/tetherusdbep20" target="_blank">
+        🐦 Twitter
       </a>
     </div>
   </div>
 </section>
 
-<!-- CONTENT -->
 <section class="section">
 
   <div class="card">
-    <h2>Description</h2>
-    <p>
-      Tether USD (BEP-20) is a test and educational stablecoin deployed on BNB Smart Chain.
-      This project has no affiliation with existing brands, assets, or financial products.
-    </p>
+    <h2>Community & Socials</h2>
+    <p>Bergabunglah dengan komunitas kami untuk mendapatkan update terbaru mengenai proyek edukasi ini.</p>
+    <div class="info-grid">
+      <a href="https://t.me/TetherUSDTOfficial9" target="_blank" style="text-decoration:none; color:inherit;">
+        <div class="info-item"><b>Telegram:</b> @TetherUSDTOfficial9</div>
+      </a>
+      <a href="https://twitter.com/tetherusdbep20" target="_blank" style="text-decoration:none; color:inherit;">
+        <div class="info-item"><b>Twitter/X:</b> @tetherusdbep20</div>
+      </a>
+    </div>
   </div>
 
   <div class="card">
     <h2>Token Information</h2>
-    <div class="card">
-  <h2>How to Add Token to Wallet</h2>
-
-  <p>
-    If the token does not appear automatically in your wallet after transfer,
-    follow the steps below. This is normal for newly deployed tokens.
-  </p>
-
-  <h3>🦊 MetaMask (Auto Detect)</h3>
-  <p>
-    Click the button below to automatically add the token to MetaMask.
-  </p>
-
-  <button class="btn primary" onclick="addToMetaMask()">
-    ➕ Add to MetaMask
-  </button>
-
-  <hr style="margin:24px 0; opacity:.3;">
-
-  <h3>📱 Trust Wallet</h3>
-  <ol>
-    <li>Open Trust Wallet</li>
-    <li>Tap the top-right filter icon</li>
-    <li>Select <b>Add Custom Token</b></li>
-    <li>Network: <b>BNB Smart Chain</b></li>
-    <li>Paste contract address below</li>
-  </ol>
-
-  <div class="info-item" style="margin-top:10px;">
-    <b>Contract Address:</b><br>
-    0xdc29BaDe5b04438C62c2822f83923c18BED9D9f8
-  </div>
-
-  <hr style="margin:24px 0; opacity:.3;">
-
-  <h3>🔐 OKX Wallet</h3>
-  <ol>
-    <li>Open OKX Wallet</li>
-    <li>Switch network to <b>BNB Smart Chain</b></li>
-    <li>Search the token by contract address</li>
-    <li>Confirm and add token</li>
-  </ol>
-
-  <p style="font-size:13px; color:var(--muted); margin-top:16px;">
-    ⚠️ Note: Some wallets require manual token addition for new or test tokens.
-    This does not mean your funds are missing.
-  </p>
-</div>
-
     <div class="info-grid">
       <div class="info-item"><b>Name:</b> Tether USD</div>
       <div class="info-item"><b>Symbol:</b> USDT</div>
       <div class="info-item"><b>Chain:</b> BNB Smart Chain</div>
       <div class="info-item"><b>Decimals:</b> 18</div>
-      <div class="info-item"><b>Contract:</b><br>
+      <div class="info-item" style="grid-column: span 1;"><b>Contract:</b><br>
         0xdc29BaDe5b04438C62c2822f83923c18BED9D9f8
       </div>
     </div>
   </div>
 
-  <!-- XXYY MARKET -->
   <div class="card">
     <h2>Live Market</h2>
-    <iframe class="market"
-      src="https://www.xxyy.io/bsc/0xbb46ec8d2414ea6af618e86d6224563c15c02035"
-      loading="lazy"
-      sandbox="allow-scripts allow-same-origin">
-    </iframe>
+    <iframe class="market" src="https://www.xxyy.io/bsc/0xbb46ec8d2414ea6af618e86d6224563c15c02035" loading="lazy"></iframe>
   </div>
 
-  <!-- GECKOTERMINAL CHART -->
-  <div class="card">
-    <h2>Live Chart (GeckoTerminal)</h2>
-    <iframe class="market"
-      src="https://www.geckoterminal.com/bsc/pools/0xbb46ec8d2414ea6af618e86d6224563c15c02035?embed=1&theme=dark"
-      loading="lazy"
-      sandbox="allow-scripts allow-same-origin">
-    </iframe>
-  </div>
-  </div>
-
-<footer>
-© 2025 Azhar Crypto • Educational & Testing Project
-</footer>
+  <footer>
+    © 2025 Azhar Crypto • Educational & Testing Project
+  </footer>
 
 </section>
 
 <script>
 function toggleDark() {
   document.documentElement.classList.toggle("dark");
+}
+function addToMetaMask() {
+  // Fungsi dummy sesuai kebutuhan integrasi wallet Anda
+  alert("Proses menambahkan ke MetaMask...");
 }
 </script>
 
